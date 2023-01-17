@@ -1,0 +1,33 @@
+{
+  "name": "trippy_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HienNguyen120601/trippy_api.git"
+  },
+  "author": "Nguyuen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HienNguyen120601/trippy_api/issues"
+  },
+  "homepage": "https://github.com/HienNguyen120601/trippy_api#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.3",
+    "nodemon": "^2.0.20",
+    "yup": "^0.32.11"
+  }
+}
