@@ -22,7 +22,7 @@ app.use(cookieParser())
 app.use(express.json())
 
 //router
-app.use("/", () => {
+app.use("/", (req, res) => {
     res.send("Chin chào !! This is api design and coding by Nguyên :3 .If you see this message. Have a good day moaz moaz :3")
 })
 app.use("/v1/auth", authRoute)
