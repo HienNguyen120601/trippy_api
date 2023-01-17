@@ -23,11 +23,12 @@ app.use(express.json())
 
 //router
 app.use("/", () => {
-    console.log("Hi, This is page by coded Nguyn")
+    res.send("Chin chào !! This is api design and coding by Nguyên :3 .If you see this message. Have a good day moaz moaz :3")
 })
 app.use("/v1/auth", authRoute)
 
 
-app.listen(8000, () => {
-    console.log("Server is running")
+const PORT = process.env.PORT || 8000
+app.listen(PORT, () => {
+    console.log(`Starting with port ${PORT}`)
 })
