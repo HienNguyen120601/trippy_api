@@ -4,6 +4,8 @@ const mongoose = require("mongoose")
 const cookieParser = require("cookie-parser")
 
 const authRoute = require("./routes/auth")
+const userRoute = require("./routes/user")
+
 
 const app = express()
 
@@ -22,11 +24,9 @@ app.use(cookieParser())
 app.use(express.json())
 
 //router
-app.use("/", (req, res) => {
-    res.send("Chin chào !! This is api design and coding by Nguyên :3 .If you see this message. Have a good day moaz moaz :3")
-})
-app.use("/v1/auth", authRoute)
 
+app.use("/v1/auth", authRoute)
+app.use("/v1/user", userRoute)
 
 const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {

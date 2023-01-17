@@ -1,6 +1,7 @@
 const User = require("../models/user")
 const bcrypt = require('bcrypt');
-
+const jwt = require("jsonwebtoken");
+const { use } = require("../routes/user");
 const authController = {
     registerUser: async (req, res) => {
         try {
@@ -29,8 +30,19 @@ const authController = {
             if (!validate) {
                 res.status(404).json("Wrong password")
             }
-            if (user && validate)
-                res.status(200).json(user)
+            if (user && validate) {
+                const accesstoken =
+                    jwt.sign(
+                        {
+                            id: user.id,
+                            admin: user.admin
+                        },
+                        "nguyen",
+                        { expiresIn: "2h" })
+                const { password, ...other } = user._doc;
+                res.status(200).json({ ...other, accesstoken })
+            }
+
         }
         catch (err) {
             res.status(500).json(err)
